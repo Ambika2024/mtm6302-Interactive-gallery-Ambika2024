@@ -11,7 +11,7 @@ body {
 header {
   width: 100%;
   text-align: center;
-  background-color: #ffffff; /* Added for better contrast */
+  background-color: #060101; /* Added for better contrast */
   padding: 20px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added for a subtle shadow effect */
 }
@@ -19,7 +19,7 @@ header {
 header h1 {
   margin: 0;
   font-size: 2rem;
-  color: #0522ff;
+  color: #f7f7f8;
 }
 
 .gallery {
@@ -67,14 +67,14 @@ header h1 {
 }
 
 #modal-caption {
-  color: #fff; /* Changed color to white for better visibility */
+  color: #0b0101; /* Changed color to white for better visibility */
   margin-top: 10px;
   font-size: 1.2rem;
   text-align: center;
 }
 
 #prev, #next {
-  background-color: #fff;
+  background-color: #0b0707;
   border: none;
   color: #0522ff;
   padding: 10px 20px;
@@ -84,7 +84,7 @@ header h1 {
 }
 
 #prev:hover, #next:hover {
-  background-color: #ddd;
+  background-color: #0e0505;
 }
 
 #prev {
