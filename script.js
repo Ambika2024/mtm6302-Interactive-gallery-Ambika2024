@@ -20,33 +20,42 @@ document.addEventListener('DOMContentLoaded' , () =>{
  {src: 'images/BACKGOUND18.jpg , hdSrc:'images/hd/BACKGOUND18.jpg',caption: 'First Image'},
  {src: 'images/BACKGOUND19.jpg , hdSrc:'images/hd/BACKGOUND19.jpg',caption: 'First Image'},
  {src: 'images/BACKGOUND20.jpg , hdSrc:'images/hd/BACKGOUND20.jpg',caption: 'First Image'},
-   ];
-  const gallery = documentById('gallery');
-  images.ForEach({images,index}=>{
-    const imgElement = document.createElement('img');
-    imgElement.src =image.src;
-      imgElement.dataset.hdSrc = image.hdSrc
-       imgElement.dataset.caption = image.caption;
-       imgElement.dataset.index = index;
-    gallery,appendchild(imgElement);
-  });
-  gallery.addEventListener('click', (e)=>{
-    if(e.target.tagName === 'IMG'){
-      const hdSrc= e.target..dataset.hdSrc;
-      const caption= e.target.dataset.caption ;
-      const hdImageContainer= document.createElement('div');
-      hdImageContainer.id ='hd-image-container';
-      hdImageContainer.style.display ='flex;
+ ];
 
-      comst hdImage = document.createElement('img');
-      hdImage.src = hdSrc;
-      hdImageContainer.appendchild(captionElement);
-      document.body.appendchild(hdImageContainer);
-      hdImageContainer.addEventListener('click',()=>){
-        hdImageContainer.style.display='none';
-        document.body.,removechilf(hdImageContainer);
-     });
-    }
-    }),
+    const gallery = document.getElementById('gallery');
+
+    images.forEach((image, index) => {
+        const imgElement = document.createElement('img');
+        imgElement.src = image.src;
+        imgElement.dataset.hdSrc = image.hdSrc;
+        imgElement.dataset.caption = image.caption;
+        imgElement.dataset.index = index;
+        gallery.appendChild(imgElement);
+    });
+
+    gallery.addEventListener('click', (e) => {
+        if (e.target.tagName === 'IMG') {
+            const hdSrc = e.target.dataset.hdSrc;
+            const caption = e.target.dataset.caption;
+            const hdImageContainer = document.createElement('div');
+            hdImageContainer.id = 'hd-image-container';
+            hdImageContainer.style.display = 'flex';
+
+            const hdImage = document.createElement('img');
+            hdImage.src = hdSrc;
+            hdImageContainer.appendChild(hdImage);
+
+            const captionElement = document.createElement('div');
+            captionElement.id = 'caption';
+            captionElement.textContent = caption;
+            hdImageContainer.appendChild(captionElement);
+
+            document.body.appendChild(hdImageContainer);
+
+            hdImageContainer.addEventListener('click', () => {
+                hdImageContainer.style.display = 'none';
+                document.body.removeChild(hdImageContainer);
+            });
+        }
     });
-
+});
